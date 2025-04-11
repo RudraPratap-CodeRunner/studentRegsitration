@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- Project is designed with semantic html tag -->
+     <!-- this is project heading containing description  -->
+
+    <header>
+      <h1>Student Registration System</h1>
+      <small>A portal to resgister student details</small>
+    </header>
+    <main>
+      
+        <section>
+          
+          <form id="studentForm">
+            <!-- This input field will hold index for table  -->
+            <input type="hidden" id="studentIndex">
+
+            <!-- This input field will itake only characters  -->
+             <!-- required attribute makes sure that empty field is not submitted  -->
+            <input type="text" id="name" oninput="this.value = this.value.replace(/[^a-zA-Z]/g, '')" placeholder="Name" required>
+
+            <!-- type="number" makes sure that only number get submitted  -->
+            <input type="number" id="class" placeholder="ID" required>
+
+            <!-- type="email" make sure that correct email is entered  -->
+            <input type="email" id="address" placeholder="Email" required>
+
+            <input type="number" id="contact" placeholder="Contact Number" required>
+
+            <button type="submit">Submit</button>
+          </form>
+        </section>
+        <section>
+            <h1 class="table-heading">Student's Table</h1>
+            <div class="table-container">
+              <table>
+                <thead>
+                  <!-- This is table header  -->
+                  <tr>
+                    <th>Name</th>
+                    <th>ID</th>
+                    <th>Email</th>
+                    <th>Contact</th>
+                    <th>Edit</th>
+                  </tr>
+                </thead>
+                <tbody id="studentTableBody">
+                    <!-- Table body is empty elements will be added dynamically using javascript -->
+                </tbody>
+            </div>
+            </table>
+        </section>
+      
+    </main>
+    <!-- javascript file index.js is added  -->
+    <script src="index.js"></script>
+  </body>
+</html>
